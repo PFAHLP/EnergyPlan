@@ -5,15 +5,17 @@ const config = {
   options: {
         responsive: true,
         scales: {
-        xAxes: [{ticks: {mirror: true}},
-                {display: false},
-              ],
-        y: {
-          min: 0,
-          max: maxValuePlot,
+          x: {
+            stacked: true,
+            max: 100,
+            min: 0
+          },
+          y: {
+            stacked: true,
+            max: maxValuePlot,
+            min: 0
+          }
         },
-
-    },
 
 
     //space at the top + bottom
@@ -120,8 +122,8 @@ function graphHoverEvent(e, ctx, mainplot){
   }
 }
 
-function graphDragStart(e, element) {
-  data.datasets[element].borderWidth = 3 ;
+function graphDragStart(e, datasetIndex) {
+  data.datasets[datasetIndex].borderWidth = 3 ;
   //leaving selectedItem selected
   if (selectedIndex in window){
   }
@@ -129,21 +131,42 @@ function graphDragStart(e, element) {
     data.datasets[selectedIndex].borderWidth = 9 ;
   }
   var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
-  data.datasets[element].borderRadius = borderradius;
+  data.datasets[datasetIndex].borderRadius = borderradius;
+
+  //check max value
+  var checkMaxValue = 0;
+  // going trou the selected stack
+  for (let i = 0; i < data.datasets.length; i++) {
+    if(data.datasets[datasetIndex].stack == data.datasets[i].stack){
+      checkMaxValue += data.datasets[i].data[0];
+    }
+  }
+  if (checkMaxValue > maxValuePlot){
+    data.datasets[datasetIndex].data[0] -= (checkMaxValue - maxValuePlot) +10 ;
+
+
+  }
   eneryChart.update()
 }
 
 function graphDrag(e, datasetIndex, index, value) {
   //console.log(datasetIndex);
-  return;
-
     data.datasets[datasetIndex].borderWidth = 3;
     var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
     data.datasets[datasetIndex].borderRadius = borderradius;
 
     //check max value
-}
-
+    var checkMaxValue = 0;
+    // going trou the selected stack
+    for (let i = 0; i < data.datasets.length; i++) {
+      if(data.datasets[datasetIndex].stack == data.datasets[i].stack){
+        checkMaxValue += data.datasets[i].data[0];
+      }
+    }
+    if (checkMaxValue >= maxValuePlot){
+      return false;
+    }
+  }
   function graphDragEnd(e, datasetIndex, index, value) {
 
       //change all back
