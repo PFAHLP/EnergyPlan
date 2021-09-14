@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href ="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src= "data.js" > </script>
+  <script src= "config.js" > </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"> </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-dragdata@2.0.2/dist/chartjs-plugin-dragdata.min.js"></script>
+
+  <title> ENERGIE </title>
+
+</head>
+<body >
+  <script>
+        import {Chart} from 'chart.js';
+        import ChartDataLabels from 'chartjs-plugin-datalabels';
+        import chartOptions from '~/assets/js/labour.js';
+        import 'chartjs-plugin-dragdata';
+  </script>
+  <div class="row">
+    <div class="col-md-8 no-float">
+      <canvas id="textCanvas" ></canvas>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      </div>
+      </div>
+      <div class="col-md-4 no-float">
+        <canvas id="plotCanvas"></canvas>
+      </div>
+      <script src = "generatingCanvas.js"></script>
+
+  </div>
+
+
+</body>
+</html>
