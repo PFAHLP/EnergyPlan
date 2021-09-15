@@ -6,12 +6,22 @@ var selectedIndex
 maintext();
 
 
+const mySlider = document.getElementById("customRange3")
+mySlider.addEventListener("click",changevalue);
+
+function changevalue(){
+  data.datasets[selectedIndex].data[0]  = mySlider.value;
+  eneryChart.update();
+}
+
 var plotcanvas = document.getElementById('plotCanvas');
 var plotctx = plotcanvas.getContext('2d');
 //draw stuff
 var eneryChart = new Chart(plotctx,
   config
 );
+
+
   function maintext() {
         var textCanvas = document.getElementById("textCanvas");
         var textctx = textCanvas.getContext("2d");
