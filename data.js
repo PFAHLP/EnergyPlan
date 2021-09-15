@@ -31,7 +31,7 @@ datasets: [
   //production
     {
       label: 'Transport',
-      data: [12],
+      data: [52],
       stack: "Stack 1",
       borderColor: productionBorderColor,
       backgroundColor: productionBackgroundColor,
@@ -70,16 +70,6 @@ datasets: [
       borderSkipped: borderskipped,
       borderRadius: borderradius,
 
-    },{
-      label: 'Car',
-      data: [40],
-      stack: "Stack 1",
-      borderColor: productionBorderColor,
-      backgroundColor: productionBackgroundColor,
-      borderWidth: productionBorderWidth,
-      borderSkipped: borderskipped,
-      borderRadius: borderradius,
-
     },
     {
       label: 'Lights',
@@ -104,8 +94,8 @@ datasets: [
 
     //consumption
     {
-      label: 'Solar heating',
-      data: [13],
+      label: 'Solar',
+      data: [63],
       stack: "Stack 0",
       borderColor: consumptionBorderColor,
       backgroundColor: consumptionBackgroundColor,
@@ -115,62 +105,19 @@ datasets: [
 
     },
     {
-      label: 'Wind on land',
+      label: 'Wind',
+      data: [86],
+      stack: "Stack 0",
+      borderColor: consumptionBorderColor,
+      backgroundColor: consumptionBackgroundColor,
+      borderWidth: productionBorderWidth,
+      borderSkipped: borderskipped,
+      borderRadius: borderradius,
+
+    },
+    {
+      label: 'Hydro',
       data: [20],
-      stack: "Stack 0",
-      borderColor: consumptionBorderColor,
-      backgroundColor: consumptionBackgroundColor,
-      borderWidth: productionBorderWidth,
-      borderSkipped: borderskipped,
-      borderRadius: borderradius,
-
-    },
-    {
-      label: 'Wind offshore',
-      data: [16],
-      stack: "Stack 0",
-      borderColor: consumptionBorderColor,
-      backgroundColor: consumptionBackgroundColor,
-      borderWidth: productionBorderWidth,
-      borderSkipped: borderskipped,
-      borderRadius: borderradius,
-    },
-    {
-      label: 'Wind offshore deep',
-      data: [32],
-      stack: "Stack 0",
-      borderColor: consumptionBorderColor,
-      backgroundColor: consumptionBackgroundColor,
-      borderWidth: productionBorderWidth,
-      borderSkipped: borderskipped,
-      borderRadius: borderradius,
-
-    },
-    {
-      label: 'Wave and Tide',
-      data: [15],
-      stack: "Stack 0",
-      borderColor: consumptionBorderColor,
-      backgroundColor: consumptionBackgroundColor,
-      borderWidth: productionBorderWidth,
-      borderSkipped: borderskipped,
-      borderRadius: borderradius,
-
-    },
-    {
-      label: 'PV farm',
-      data: [50],
-      stack: "Stack 0",
-      borderColor: consumptionBorderColor,
-      backgroundColor: consumptionBackgroundColor,
-      borderWidth: productionBorderWidth,
-      borderSkipped: borderskipped,
-      borderRadius: borderradius,
-
-    },
-    {
-      label: 'PV Roof',
-      data: [5],
       stack: "Stack 0",
       borderColor: consumptionBorderColor,
       backgroundColor: consumptionBackgroundColor,
