@@ -5,19 +5,19 @@ var selectedItem = "Home"
 var selectedIndex
 maintext();
 
+
 var plotcanvas = document.getElementById('plotCanvas');
 var plotctx = plotcanvas.getContext('2d');
 //draw stuff
 var eneryChart = new Chart(plotctx,
   config
 );
-
-
   function maintext() {
         var textCanvas = document.getElementById("textCanvas");
         var textctx = textCanvas.getContext("2d");
 
         if (selectedItem == "Home") {
+          textctx.font = "30px Arial";
           textctx.fillText("Hello World Home",10,100);
         };
 

@@ -7,17 +7,21 @@ const config = {
         scales: {
           x: {
             stacked: true,
-            max: 100,
+            max: 0,
             min: 0
           },
           y: {
-            stacked: true,
-            max: maxValuePlot,
-            min: 0
-          }
+            type: 'linear',
+            position: 'left',
+            min:0
+
+          },
+          'right-y-axis': {
+            type: 'linear',
+            position: 'right',
+            min:0,
+          },
         },
-
-
     //space at the top + bottom
     layout: {
       padding: {
@@ -41,7 +45,7 @@ const config = {
       title: {
           display: true,
           fullSize: true,
-          text: 'Energy usage per day per person',
+          text: 'Energy per day per person',
           color: textColor,
           font: {
                size: 30
@@ -88,7 +92,6 @@ const config = {
 //adding the click functionality to the plot
 //outgoing
 function graphClickEvent(event, ctx, mainplot){
-  console.log(eneryChart.scales.y._endValue);
     //get index and label
     indexOnClick = ctx[0]. datasetIndex
     labelOnClick = data.datasets[indexOnClick].label
@@ -113,7 +116,6 @@ function graphClickEvent(event, ctx, mainplot){
 
 function graphHoverEvent(e, ctx, mainplot){
   if (ctx[0] in window){
-
   }
   else{
     indexOnHover = ctx[0].datasetIndex
