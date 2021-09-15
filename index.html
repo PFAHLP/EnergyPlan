@@ -30,19 +30,31 @@
         import chartOptions from '~/assets/js/labour.js';
         import 'chartjs-plugin-dragdata';
   </script>
-  <div class="row">
-    <div class="col-md-8 no-float">
+  <div class = "container-fluid">
+    <div class = "row">
+      <div class = "col-sm-8">
+        <canvas id="textCanvas" ></canvas>
+      </div>
+      <div class = "col-sm-4">
+        <div class="chart-container" style="position: relative; height:100vh;">
+          <canvas id="plotCanvas"></canvas>
+        </div>
+    </div>
+
+  </div>
+  <!--<div class="col-md-8 no-float">
       <canvas id="textCanvas" ></canvas>
       <div class="slidecontainer">
         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
       </div>
-      </div>
-      <div class="col-md-4 no-float">
-        <canvas id="plotCanvas"></canvas>
-      </div>
-      <script src = "generatingCanvas.js"></script>
-
   </div>
+  <div class="col-md-4 no-float">
+  <div class="chart-container" style="position: relative; height:100vh; width:30vw">
+        <canvas id="plotCanvas"></canvas>
+  </div>-->
+  <script src = "generatingCanvas.js"></script>
+
+
 
 
 </body>

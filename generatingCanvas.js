@@ -18,7 +18,6 @@ var eneryChart = new Chart(plotctx,
         var textctx = textCanvas.getContext("2d");
 
         if (selectedItem == "Home") {
-          textctx.font = "30px Arial";
           textctx.fillText("Hello World Home",10,100);
         };
 

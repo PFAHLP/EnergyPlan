@@ -64,8 +64,8 @@ const config = {
                textAlign: 'center',
 
                font: {
-                   lineHeight: 1.6,
-                   size: 20,
+                   lineHeight: 1,
+                   size: 15,
                    style:"normal",
                },
                formatter: function(value, ctx) {
@@ -88,6 +88,7 @@ const config = {
 //adding the click functionality to the plot
 //outgoing
 function graphClickEvent(event, ctx, mainplot){
+  console.log(eneryChart.scales.y._endValue);
     //get index and label
     indexOnClick = ctx[0]. datasetIndex
     labelOnClick = data.datasets[indexOnClick].label
