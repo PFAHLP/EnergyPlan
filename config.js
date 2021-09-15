@@ -133,39 +133,14 @@ function graphDragStart(e, datasetIndex) {
   var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
   data.datasets[datasetIndex].borderRadius = borderradius;
 
-  //check max value
-  var checkMaxValue = 0;
-  // going trou the selected stack
-  for (let i = 0; i < data.datasets.length; i++) {
-    if(data.datasets[datasetIndex].stack == data.datasets[i].stack){
-      checkMaxValue += data.datasets[i].data[0];
-    }
-  }
-  if (checkMaxValue > maxValuePlot){
-    data.datasets[datasetIndex].data[0] -= (checkMaxValue - maxValuePlot) +10 ;
-
-
-  }
   eneryChart.update()
-}
+  }
 
 function graphDrag(e, datasetIndex, index, value) {
   //console.log(datasetIndex);
     data.datasets[datasetIndex].borderWidth = 3;
     var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
     data.datasets[datasetIndex].borderRadius = borderradius;
-
-    //check max value
-    var checkMaxValue = 0;
-    // going trou the selected stack
-    for (let i = 0; i < data.datasets.length; i++) {
-      if(data.datasets[datasetIndex].stack == data.datasets[i].stack){
-        checkMaxValue += data.datasets[i].data[0];
-      }
-    }
-    if (checkMaxValue >= maxValuePlot){
-      return false;
-    }
   }
   function graphDragEnd(e, datasetIndex, index, value) {
 
@@ -182,9 +157,7 @@ function graphDrag(e, datasetIndex, index, value) {
         }
       }
       eneryChart.update()
-
-      // check if not displayed and move to the side button
-  }
+      }
 
 function newLegendClickHandler(e, legendItem, legend) {
       var datasetIndex = legendItem.datasetIndex;

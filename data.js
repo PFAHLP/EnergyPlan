@@ -22,7 +22,6 @@ var newBorderRadius = 20
 var borderradius = {topLeft: defaultBorderRadius, topRight: defaultBorderRadius, bottomLeft: defaultBorderRadius, bottomRight: defaultBorderRadius}
 
 var toSmallToDisplay = [true]
-
 var maxValuePlot = 300
 
 const data = {
