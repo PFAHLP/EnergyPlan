@@ -1,26 +1,26 @@
 
 Chart.register(ChartDataLabels);
 //set text to display
-var selectedItem = "Home"
-var selectedIndex
-maintext();
-
-
-const mySlider = document.getElementById("customRange3")
-mySlider.addEventListener("click",changevalue);
-
-function changevalue(){
-  data.datasets[selectedIndex].data[0]  = mySlider.value;
-  eneryChart.update();
-}
 
 var plotcanvas = document.getElementById('plotCanvas');
 var plotctx = plotcanvas.getContext('2d');
-//draw stuff
 var eneryChart = new Chart(plotctx,
   config
 );
 
+const mySlider = document.getElementById("customRange3");
+mySlider.addEventListener("click",changevalue);
+console.log(mySlider);
+
+
+function changevalue(){
+  console.log(data.datasets[selectedIndex].data[0])
+  data.datasets[selectedIndex].data[0]  = mySlider.value;
+  eneryChart.update();
+}
+
+
+maintext();
 
   function maintext() {
         var textCanvas = document.getElementById("textCanvas");
