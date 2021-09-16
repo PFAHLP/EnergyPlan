@@ -2,23 +2,10 @@
 function graphClickEvent(event, ctx, mainplot){
     //get index and label
     indexOnClick = ctx[0]. datasetIndex
-    labelOnClick = data.datasets[indexOnClick].label
 
-    //reset look to "normal"
-    for (let i = 0; i < data.datasets.length; i++) {
-      data.datasets[i].borderWidth = 3;
-      var borderradius = {topLeft: defaultBorderRadius, topRight: defaultBorderRadius, bottomLeft: defaultBorderRadius, bottomRight: defaultBorderRadius}
-      data.datasets[i].borderRadius = borderradius;
-    }
-    //cange to bigger borderWidth
-    data.datasets[indexOnClick].borderWidth = 9 ;
-    var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
-    data.datasets[indexOnClick].borderRadius = borderradius;
-    eneryChart.update();
-    //load new content on the left
-    //keep the selected item marked
     selectedIndex = indexOnClick;
-    selectedItem = labelOnClick;
+    labelOnClick = data.datasets[selectedIndex].label
+    drawSelectedItem();
     maintext();
   }
 
@@ -27,48 +14,59 @@ function graphHoverEvent(e, ctx, mainplot){
   }
   else{
     indexOnHover = ctx[0].datasetIndex
-    data.datasets[indexOnHover].borderWidth = 3 ;
-    var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
+    borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
     data.datasets[indexOnHover].borderRadius = borderradius;
   }
 }
 
 function graphDragStart(e, datasetIndex) {
-  data.datasets[datasetIndex].borderWidth = 3 ;
-  //leaving selectedItem selected
-  if (selectedIndex in window){
-  }
-  else{
-    data.datasets[selectedIndex].borderWidth = 9 ;
-  }
-  var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
-  data.datasets[datasetIndex].borderRadius = borderradius;
-
-  eneryChart.update()
+  //set new selected item
+  selectedIndex = datasetIndex;
+  selectedItem = data.datasets[selectedIndex].label;
+  drawSelectedItem();
+  maintext();
   }
 
 function graphDrag(e, datasetIndex, index, value) {
   //console.log(datasetIndex);
-    data.datasets[datasetIndex].borderWidth = 3;
     var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
-    data.datasets[datasetIndex].borderRadius = borderradius;
+    data.datasets[selectedIndex].borderRadius = borderradius;
   }
-  function graphDragEnd(e, datasetIndex, index, value) {
 
-      //change all back
-      var borderradius = {topLeft: defaultBorderRadius, topRight: defaultBorderRadius, bottomLeft: defaultBorderRadius, bottomRight: defaultBorderRadius}
-      data.datasets[datasetIndex].borderRadius = borderradius;
-      //add escape buton if made to small
-      if (data.datasets[datasetIndex].data[0] < 1){
-        if (toSmallToDisplay[0]){
-          toSmallToDisplay= data.datasets[datasetIndex].label
-        }
-        else{
-          toSmallToDisplay.push(data.datasets[datasetIndex].label)
-        }
+function graphDragEnd(e, datasetIndex, index, value) {
+  drawSelectedItem();
+    //add escape buton if made to small
+    if (data.datasets[datasetIndex].data[0] < 1){
+      if (toSmallToDisplay[0]){
+        toSmallToDisplay= data.datasets[datasetIndex].label
       }
-      eneryChart.update()
+      else{
+        toSmallToDisplay.push(data.datasets[datasetIndex].label)
       }
+    }
+    eneryChart.update()
+    }
+
+function drawSelectedItem(){
+  //reset others look to "normal"
+  for (let i = 0; i < data.datasets.length; i++) {
+    //change colors
+    data.datasets[i].borderWidth = productionBorderWidth;
+
+    //change border width
+
+    borderradius = {topLeft: defaultBorderRadius, topRight: defaultBorderRadius, bottomLeft: defaultBorderRadius, bottomRight: defaultBorderRadius}
+    data.datasets[i].borderRadius = borderradius;
+  }
+  // change boundary Width
+  data.datasets[selectedIndex].borderWidth = 4;
+  //change boundary color
+  //change radius of selecteditem
+  borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
+  data.datasets[selectedIndex].borderRadius = borderradius;
+  //update chart
+  eneryChart.update();
+}
 
 function newLegendClickHandler(e, legendItem, legend) {
       var datasetIndex = legendItem.datasetIndex;

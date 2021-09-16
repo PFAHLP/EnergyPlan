@@ -10,11 +10,9 @@ var eneryChart = new Chart(plotctx,
 
 const mySlider = document.getElementById("customRange3");
 mySlider.addEventListener("click",changevalue);
-console.log(mySlider);
 
 
 function changevalue(){
-  console.log(data.datasets[selectedIndex].data[0])
   data.datasets[selectedIndex].data[0]  = mySlider.value;
   eneryChart.update();
 }
