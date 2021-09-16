@@ -75,6 +75,7 @@ const config = {
                    displayedValue = ctx.chart.data.labels[ctx.dataIndex] + '\n' + value;
                    displayedName = ctx.dataset.label;
                    //for to small parts
+                   //todo change it depending oin pixel numnber not axis size
                    if (displayedValue > 11){
                      temp =  displayedName+":" +displayedValue+" kwh"
                      return temp;
