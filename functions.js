@@ -29,7 +29,7 @@ function graphDragStart(e, datasetIndex) {
 
 function graphDrag(e, datasetIndex, index, value) {
   //console.log(datasetIndex);
-    var borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
+    borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
     data.datasets[selectedIndex].borderRadius = borderradius;
   }
 
@@ -72,9 +72,5 @@ function newLegendClickHandler(e, legendItem, legend) {
       var datasetIndex = legendItem.datasetIndex;
       toSmallToDisplay = [true]
       data.datasets[datasetIndex].data[0]  = 20;
-      //in case the deleted data was selected
-      if (datasetIndex == selectedIndex ){
-        data.datasets[selectedIndex].borderWidth = 9 ;
-      }
-      eneryChart.update()
+      drawSelectedItem();
   };
