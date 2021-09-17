@@ -59,7 +59,7 @@ function drawSelectedItem(){
     data.datasets[i].borderRadius = borderradius;
   }
   // change boundary Width
-  data.datasets[selectedIndex].borderWidth = 4;
+  data.datasets[selectedIndex].borderWidth = 3;
   //change boundary color
   //change radius of selecteditem
   borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
