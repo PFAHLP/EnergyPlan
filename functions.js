@@ -67,12 +67,14 @@ function drawSelectedItem(){
 function newLegendClickHandler(e, legendItem, legend) {
       clickedItemName = legendItem.text
       dataIndex = legendItem.datasetIndex
+      //remove label from toSmallToDisplay
       toSmallToDisplay.splice(  toSmallToDisplay.indexOf(clickedItemName),1)
       data.datasets[dataIndex].data[0]  = 20;
       drawSelectedItem();
   };
 
   function escapeButton(item, chart) {
+    //check for each toSmallToDisplay if item
     for (let i = 0; i < toSmallToDisplay.length; i++) {
       if (item.text == toSmallToDisplay[i]){
         return true
