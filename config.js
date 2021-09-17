@@ -55,10 +55,8 @@ const config = {
            display: true,
            onClick: newLegendClickHandler,
            labels: {
-             filter: function(item, chart) {
-               return item.text.includes(toSmallToDisplay);
-              },
-               color: textColor,
+             filter: escapeButton,
+             color: textColor,
            }
        },
        //show data labels in chart:
@@ -74,6 +72,7 @@ const config = {
                formatter: function(value, ctx) {
                    displayedValue = ctx.chart.data.labels[ctx.dataIndex] + '\n' + value;
                    displayedName = ctx.dataset.label;
+                   //console.log(ctx.chart)
                    //for to small parts
                    //todo change it depending oin pixel numnber not axis size
                    if (displayedValue > 11){
