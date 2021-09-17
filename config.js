@@ -69,20 +69,7 @@ const config = {
                    size: 15,
                    style:"normal",
                },
-               formatter: function(value, ctx) {
-                   displayedValue = ctx.chart.data.labels[ctx.dataIndex] + '\n' + value;
-                   displayedName = ctx.dataset.label;
-                   //console.log(ctx.chart)
-                   //for to small parts
-                   //todo change it depending oin pixel numnber not axis size
-                   if (displayedValue > 11){
-                     temp =  displayedName+":" +displayedValue+" kwh"
-                     return temp;
-                   };
-                   if (displayedValue <= 11){
-                     return "";
-                   };
-               }
+               formatter: formatBars,
            },
    },
   },

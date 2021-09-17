@@ -14,6 +14,8 @@ mySlider.addEventListener("click",changevalue);
 
 function changevalue(){
   data.datasets[selectedIndex].data[0]  = mySlider.value;
+  //happends only to slected item
+  checkIfToSmall(selectedIndex);
   eneryChart.update();
 }
 

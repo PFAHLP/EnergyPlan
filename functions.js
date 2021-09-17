@@ -35,12 +35,9 @@ function graphDrag(e, datasetIndex, index, value) {
 
 function graphDragEnd(e, datasetIndex, index, value) {
   drawSelectedItem();
-    //add escape buton if made to small
-    if (data.datasets[datasetIndex].data[0] < 1){
-        toSmallToDisplay.push(data.datasets[datasetIndex].label)
-    }
-    eneryChart.update()
-    }
+  //add escape buton if made to small
+  checkIfToSmall(datasetIndex);
+}
 
 function drawSelectedItem(){
   //reset others look to "normal"
@@ -86,4 +83,25 @@ function newLegendClickHandler(e, legendItem, legend) {
 
 function addItemToEscapeButton(item,itemName){
   return item.text.includes(itemName)
+};
+
+function formatBars(value, ctx) {
+    displayedValue = ctx.chart.data.labels[ctx.dataIndex] + '\n' + value;
+    displayedName = ctx.dataset.label;
+    //for to small parts
+    //todo change it depending oin pixel numnber not axis size
+    if (displayedValue > 11){
+      temp =  displayedName+":" +displayedValue+" kwh"
+      return temp;
+    };
+    if (displayedValue <= 11){
+      return "";
+    };
+}
+
+function checkIfToSmall(datasetIndex){
+  if (data.datasets[datasetIndex].data[0] < 1){
+      toSmallToDisplay.push(data.datasets[datasetIndex].label)
+  }
+  eneryChart.update()
 }
