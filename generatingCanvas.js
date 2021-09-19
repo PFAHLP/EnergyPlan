@@ -1,7 +1,6 @@
 
 Chart.register(ChartDataLabels);
 //set text to display
-
 var plotcanvas = document.getElementById('plotCanvas');
 var plotctx = plotcanvas.getContext('2d');
 var eneryChart = new Chart(plotctx,
@@ -19,6 +18,11 @@ function changevalue(){
   eneryChart.update();
 }
 
+
+console.log("bla", dataAll.datasets[1].stack)
+updateData();
+console.log(stackToDisplay)
+updateData();
 
 maintext();
 

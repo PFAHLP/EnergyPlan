@@ -21,3 +21,5 @@ var toSmallToDisplay = [true]
 
 var selectedItem = "Home"
 var selectedIndex
+
+var stackToDisplay = ["produktion", "consumption" ]

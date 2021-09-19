@@ -1,3 +1,6 @@
+//helper
+
+
 //adding the click functionality to the plot
 function graphClickEvent(event, ctx, mainplot){
     //get index and label
@@ -112,5 +115,15 @@ function checkIfToSmall(datasetIndex){
 
 function updateSlider(){
   mySlider.value = data.datasets[selectedIndex].data[0]
+}
 
+function updateData(){
+  //add to dataset
+  data.datasets = [];
+  for (let i = 0; i < dataAll.datasets.length; i++) {
+    if ( stackToDisplay.includes (dataAll.datasets[i].stack)){
+      data.datasets.push(dataAll.datasets[i]);
+    }
+  }
+  eneryChart.update();
 }

@@ -10,6 +10,7 @@ const config = {
             min: 0
           },
           y: {
+            stacked: true,
             type: 'linear',
             position: 'left',
             min:0
