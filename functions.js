@@ -37,6 +37,8 @@ function graphDragEnd(e, datasetIndex, index, value) {
   drawSelectedItem();
   //add escape buton if made to small
   checkIfToSmall(datasetIndex);
+  updateSlider();
+  eneryChart.update();
 }
 
 function drawSelectedItem(){
@@ -65,9 +67,9 @@ function newLegendClickHandler(e, legendItem, legend) {
       clickedItemName = legendItem.text
       dataIndex = legendItem.datasetIndex
       //remove label from toSmallToDisplay
-      toSmallToDisplay.splice(  toSmallToDisplay.indexOf(clickedItemName),1)
-      data.datasets[dataIndex].data[0]  = 20;
+      removeFromToSmall(index);
       drawSelectedItem();
+      updateSlider();
   };
 
   function escapeButton(item, chart) {
@@ -81,9 +83,6 @@ function newLegendClickHandler(e, legendItem, legend) {
 
   }
 
-function addItemToEscapeButton(item,itemName){
-  return item.text.includes(itemName)
-};
 
 function formatBars(value, ctx) {
     displayedValue = ctx.chart.data.labels[ctx.dataIndex] + '\n' + value;
@@ -99,9 +98,19 @@ function formatBars(value, ctx) {
     };
 }
 
+function removeFromToSmall(){
+toSmallToDisplay.splice(  toSmallToDisplay.indexOf(clickedItemName),1)
+data.datasets[dataIndex].data[0]  = 20;
+}
+
 function checkIfToSmall(datasetIndex){
   if (data.datasets[datasetIndex].data[0] < 1){
       toSmallToDisplay.push(data.datasets[datasetIndex].label)
   }
   eneryChart.update()
+}
+
+function updateSlider(){
+  mySlider.value = data.datasets[selectedIndex].data[0]
+
 }

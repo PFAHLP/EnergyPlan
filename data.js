@@ -1,5 +1,5 @@
 
-
+// src: https://ag-energiebilanzen.de/7-0-Bilanzen-1990-2019.html
 const data = {
 labels: [""],
 datasets: [
@@ -47,18 +47,8 @@ datasets: [
 
     },
     {
-      label: 'Lights',
-      data: [4],
-      stack: "Stack 1",
-      borderColor: productionBorderColor,
-      backgroundColor: productionBackgroundColor,
-      borderWidth: productionBorderWidth,
-      borderSkipped: borderskipped,
-      borderRadius: borderradius,
-
-    },{
-      label: 'Gadgets',
-      data: [5],
+      label: 'Household Gadgets',
+      data: [10],
       stack: "Stack 1",
       borderColor: productionBorderColor,
       backgroundColor: productionBackgroundColor,
@@ -67,10 +57,11 @@ datasets: [
       borderRadius: borderradius,
     },
 
-    //consumption
+    //produktion
+    // 2020 src https://www.bmwi.de/Redaktion/DE/Infografiken/Energie/Energiedaten/Energiegewinnung-und-Energieverbrauch/energiedaten-energiegewinnung-verbrauch-03.html
     {
-      label: 'Solar',
-      data: [63],
+      label: 'Mineral Oil',
+      data: [41],
       stack: "Stack 0",
       borderColor: consumptionBorderColor,
       backgroundColor: consumptionBackgroundColor,
@@ -80,8 +71,8 @@ datasets: [
 
     },
     {
-      label: 'Wind',
-      data: [86],
+      label: 'Coal',
+      data: [26],
       stack: "Stack 0",
       borderColor: consumptionBorderColor,
       backgroundColor: consumptionBackgroundColor,
@@ -91,8 +82,8 @@ datasets: [
 
     },
     {
-      label: 'Hydro',
-      data: [20],
+      label: 'Gas',
+      data: [28],
       stack: "Stack 0",
       borderColor: consumptionBorderColor,
       backgroundColor: consumptionBackgroundColor,
@@ -102,8 +93,19 @@ datasets: [
 
     },
     {
-      label: 'Biomass',
-      data: [24],
+      label: 'Nuklear',
+      data: [8],
+      stack: "Stack 0",
+      borderColor: consumptionBorderColor,
+      backgroundColor: consumptionBackgroundColor,
+      borderWidth: productionBorderWidth,
+      borderSkipped: borderskipped,
+      borderRadius: borderradius,
+
+    },
+    {
+      label: 'Renewables',
+      data: [17],
       stack: "Stack 0",
       borderColor: consumptionBorderColor,
       backgroundColor: consumptionBackgroundColor,
@@ -113,6 +115,7 @@ datasets: [
 
     },
     //carbon
+    /*
     {
       label: 'CO2',
       data: [100],
@@ -135,5 +138,6 @@ datasets: [
           borderRadius: borderradius,
           yAxisID: 'right-y-axis'
         },
+    */
   ]
 };
