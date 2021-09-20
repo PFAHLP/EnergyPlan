@@ -1,9 +1,10 @@
 //def colors
-const productionBackgroundColor = "rgba(255, 10, 13, 0.7)"
-const productionBorderColor = "#722e2b"
+const productionBackgroundColor = "rgba(63, 199, 39, 0.7)"
+const productionBorderColor = "#2f7118"
 
-const consumptionBackgroundColor = "rgba(63, 199, 39, 0.7)"
-const consumptionBorderColor = "#2f7118"
+const consumptionBackgroundColor = "rgba(255, 10, 13, 0.7)"
+const consumptionBorderColor = "#722e2b"
+
 
 const carbonBackgroundColor = "rgba(110, 8, 156, 0.7)"
 const carbonBorderColor = "#5b2782"
@@ -22,4 +23,4 @@ var toSmallToDisplay = [true]
 var selectedItem = "Home"
 var selectedIndex
 
-var stackToDisplay = ["produktion", "consumption" ]
+var stackToDisplay = ["consumption","produktion" ]

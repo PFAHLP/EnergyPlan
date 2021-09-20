@@ -19,8 +19,7 @@ function changevalue(){
 }
 
 
-console.log("bla", dataAll.datasets[1].stack)
-updateData();
+stackToDisplay.unshift("carbon")
 console.log(stackToDisplay)
 updateData();
 
