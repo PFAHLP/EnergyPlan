@@ -32,7 +32,6 @@ const config = {
     //fit it in the container
     maintainAspectRatio: false,
     //make it clickable
-    onClick:graphClickEvent,
     onHover: graphHoverEvent,
     plugins: {
       dragData: {

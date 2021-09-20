@@ -26,6 +26,8 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
+
       },
       {
         label: 'Heating',
@@ -36,6 +38,8 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
+
       },
       {
         label: 'Stuff',
@@ -46,6 +50,7 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
 
       },
       {
@@ -57,6 +62,7 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
 
       },
       {
@@ -68,6 +74,8 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
+
       },
       {
         label: 'Farming',
@@ -78,6 +86,8 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
+
       },
       //produktion
       // 2produktion2produktion src https://www.bmwi.de/Redaktion/DE/Infografiken/Energie/Energiedaten/Energiegewinnung-und-Energieverbrauch/energiedaten-energiegewinnung-verbrauch-03.html
@@ -90,6 +100,7 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
 
       },
       {
@@ -101,6 +112,7 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
 
       },
       {
@@ -112,6 +124,7 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
 
       },
       {
@@ -123,6 +136,7 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
 
       },
       {
@@ -134,6 +148,7 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
+        yAxisID: 'right-y-axis'
 
       },
       //Carbon
@@ -146,7 +161,6 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
-        yAxisID: 'right-y-axis'
       },
       {
         label: 'CO3',
@@ -157,13 +171,12 @@ const dataAll = {
         borderWidth: productionBorderWidth,
         borderSkipped: borderskipped,
         borderRadius: borderradius,
-        yAxisID: 'right-y-axis'
       },
       //Transport
       {
         label: 'Car',
         data: [10],
-        stack: "transport",
+        stack: "Transport",
         borderColor: consumptionBorderColor,
         backgroundColor: consumptionBackgroundColor,
         borderWidth: productionBorderWidth,
@@ -173,7 +186,7 @@ const dataAll = {
       {
         label: 'Train',
         data: [10],
-        stack: "transport",
+        stack: "Transport",
         borderColor: consumptionBorderColor,
         backgroundColor: consumptionBackgroundColor,
         borderWidth: productionBorderWidth,
@@ -183,7 +196,7 @@ const dataAll = {
       {
         label: 'Goods',
         data: [10],
-        stack: "transport",
+        stack: "Transport",
         borderColor: consumptionBorderColor,
         backgroundColor: consumptionBackgroundColor,
         borderWidth: productionBorderWidth,

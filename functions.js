@@ -3,13 +3,7 @@
 
 //adding the click functionality to the plot
 function graphClickEvent(event, ctx, mainplot){
-    //get index and label
-    indexOnClick = ctx[0].datasetIndex
 
-    selectedIndex = indexOnClick;
-    labelOnClick = data.datasets[selectedIndex].label
-    drawSelectedItem();
-    maintext();
   }
 
 function graphHoverEvent(e, ctx, mainplot){
@@ -26,6 +20,7 @@ function graphDragStart(e, datasetIndex) {
   //set new selected item
   selectedIndex = datasetIndex;
   selectedItem = data.datasets[selectedIndex].label;
+  addSelectedInfo();
   drawSelectedItem();
   maintext();
   }
@@ -120,10 +115,22 @@ function updateSlider(){
 function updateData(){
   //add to dataset
   data.datasets = [];
-  for (let i = 0; i < dataAll.datasets.length; i++) {
-    if ( stackToDisplay.includes (dataAll.datasets[i].stack)){
-      data.datasets.push(dataAll.datasets[i]);
+  for (let k = 0; k < stackToDisplay.length; k++) {
+    for (let i = 0; i < dataAll.datasets.length; i++) {
+      if ( stackToDisplay[k] == dataAll.datasets[i].stack){
+        data.datasets.push(dataAll.datasets[i]);
+      }
     }
   }
   eneryChart.update();
+}
+
+function addSelectedInfo(){
+  for (let i = 0; i < dataAll.datasets.length; i++) {
+      if (dataAll.datasets.stack == selectedItem){
+        stackToDisplay.unshift(selectedItem)
+        updateData();
+        stackToDisplay.shift(selectedItem);
+      }
+    }
 }

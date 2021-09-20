@@ -19,8 +19,6 @@ function changevalue(){
 }
 
 
-stackToDisplay.unshift("carbon")
-console.log(stackToDisplay)
 updateData();
 
 maintext();
