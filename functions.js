@@ -47,7 +47,7 @@ function graphDragEnd(e, datasetIndex, index, value) {
   for (let i = 0; i < dataInfo.datasets.length; i++) {
     sum += dataInfo.datasets[i].data[0];
   }
-  data.datasets[selectedIndex].data[0] = sum;
+  data.datasets[selectedIndex].data[0] = Math.round(sum);
   energyChart.update();
 }
 

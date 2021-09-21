@@ -107,6 +107,15 @@ const configInfo= {
     //make it clickable
     onHover: graphHoverEvent,
     plugins: {
+      legend: {
+          //set to false to remove side bar
+          display: true,
+          onClick: newLegendClickHandler,
+          labels: {
+            filter: escapeButton,
+            color: textColor,
+          }
+      },
       dragData: {
         round: 1,
         showTooltip: true,
@@ -114,10 +123,6 @@ const configInfo= {
         onDrag: graphDrag,
         onDragEnd: graphDragEnd,
       },
-      legend: {
-          //set to false to remove side bar
-          display: false,
-          },
        datalabels: {
                color: textColor,
                textAlign: 'center',
