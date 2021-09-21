@@ -1,3 +1,12 @@
+const actions = [
+  {
+    name: 'CO2',
+    handler(energyChart) {
+
+    },
+  },
+];
+
 const config = {
   type: 'bar',
   data: data,
@@ -9,18 +18,14 @@ const config = {
             max: 0,
             min: 0
           },
-          y: {
-            stacked: true,
-            display: false,
-            type: 'linear',
-            position: 'left',
-            min:0
 
-          },
-          'right-y-axis': {
+          "right-y-axis":{
+            stacked: true,
+            display: true,
             type: 'linear',
             position: 'right',
-            min:0,
+            min:0
+
           },
         },
     //space at the top + bottom
@@ -33,15 +38,9 @@ const config = {
     //fit it in the container
     maintainAspectRatio: false,
     //make it clickable
+    onClick: graphClickEvent,
     onHover: graphHoverEvent,
     plugins: {
-      dragData: {
-        round: 1,
-        showTooltip: true,
-        onDragStart: graphDragStart,
-        onDrag: graphDrag,
-        onDragEnd: graphDragEnd,
-      },
       title: {
           display: true,
           fullSize: true,
@@ -108,6 +107,13 @@ const configInfo= {
     //make it clickable
     onHover: graphHoverEvent,
     plugins: {
+      dragData: {
+        round: 1,
+        showTooltip: true,
+        onDragStart: graphDragStart,
+        onDrag: graphDrag,
+        onDragEnd: graphDragEnd,
+      },
       legend: {
           //set to false to remove side bar
           display: false,

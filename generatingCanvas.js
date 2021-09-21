@@ -4,13 +4,13 @@ Chart.register(ChartDataLabels);
 
 var plotcanvas = document.getElementById('plotCanvas');
 var plotctx = plotcanvas.getContext('2d');
-var eneryChart = new Chart(plotcanvas,
+var energyChart = new Chart(plotcanvas,
   config
 );
 
 var plotcanvasInfo = document.getElementById('plotExtraInfoCanvas');
 var plotInfoctx = plotcanvasInfo.getContext('2d');
-var eneryChartInfo = new Chart(plotcanvasInfo,
+var energyChartInfo = new Chart(plotcanvasInfo,
   configInfo
 );
 
@@ -19,19 +19,20 @@ var eneryChartInfo = new Chart(plotcanvasInfo,
 const mySlider = document.getElementById("customRange3");
 mySlider.addEventListener("click",changevalue);
 
-
 function changevalue(){
   data.datasets[selectedIndex].data[0]  = mySlider.value;
   //happends only to slected item
   checkIfToSmall(selectedIndex);
-  eneryChart.update();
+  energyChart.update();
 }
 
-
+function updateSlider(){
+  mySlider.value = data.datasets[selectedIndex].data[0]
+}
 addData();
 
 maintext();
-eneryChartInfo.update();
+energyChartInfo.update();
 
 
 
