@@ -4,6 +4,13 @@ const data = {
 
     ]
   };
+
+const dataInfo= {
+  labels: [""],
+  datasets: [
+
+    ]
+  };
   const dataEmpty = {
     labels: [""],
     datasets: [
@@ -175,7 +182,7 @@ const dataAll = {
       //Transport
       {
         label: 'Car',
-        data: [10],
+        data:  [10],
         stack: "Transport",
         borderColor: consumptionBorderColor,
         backgroundColor: consumptionBackgroundColor,

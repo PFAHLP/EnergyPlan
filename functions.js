@@ -20,7 +20,7 @@ function graphDragStart(e, datasetIndex) {
   //set new selected item
   selectedIndex = datasetIndex;
   selectedItem = data.datasets[selectedIndex].label;
-  addSelectedInfo();
+  addInfoItems();
   drawSelectedItem();
   maintext();
   }
@@ -96,6 +96,17 @@ function formatBars(value, ctx) {
     };
 }
 
+function formatBarsInfo(value, ctx) {
+    displayedValue = ctx.chart.data.labels[ctx.dataIndex] + '\n' + value;
+    displayedName = ctx.dataset.label;
+    //for to small parts
+      //todo change it depending oin pixel numnber not axis size
+    temp =  displayedName+":" +displayedValue+" kwh"
+    return temp;
+}
+
+
+
 function removeFromToSmall(){
 toSmallToDisplay.splice(  toSmallToDisplay.indexOf(clickedItemName),1)
 data.datasets[dataIndex].data[0]  = 20;
@@ -112,7 +123,7 @@ function updateSlider(){
   mySlider.value = data.datasets[selectedIndex].data[0]
 }
 
-function updateData(){
+function addData(){
   //add to dataset
   data.datasets = [];
   for (let k = 0; k < stackToDisplay.length; k++) {
@@ -125,12 +136,15 @@ function updateData(){
   eneryChart.update();
 }
 
-function addSelectedInfo(){
+function addInfoItems(){
+  dataInfo.datasets = [];
+  //add info
   for (let i = 0; i < dataAll.datasets.length; i++) {
-      if (dataAll.datasets.stack == selectedItem){
-        stackToDisplay.unshift(selectedItem)
-        updateData();
-        stackToDisplay.shift(selectedItem);
-      }
+    if ( selectedItem == dataAll.datasets[i].stack){
+      dataInfo.datasets.push(dataAll.datasets[i]);
+      console.log(dataInfo);
     }
+  }
+  console.log(dataInfo);
+  eneryChartInfo.update();
 }

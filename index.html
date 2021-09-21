@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <script src = "variables.js"></script>
-  <script  src= "functions.js"></script>
+  <script src= "functions.js"></script>
   <script src= "data.js" > </script>
   <script src= "config.js" > </script>
 
@@ -35,10 +35,15 @@
   </script>
   <div class = "container-fluid">
     <div class = "row">
-      <div class = "col-sm-9">
+      <div class = "col-sm-8">
         <canvas id="textCanvas" ></canvas>
 
         <input type="range" class="form-range" min="0" max="100" step="1" id="customRange3">
+
+      </div>
+      <div class = "col-sm-1">
+        <div class="chart-container_2" style="position: relative; height:100vh;"> <canvas id="plotExtraInfoCanvas"></canvas> </div>
+
 
       </div>
 

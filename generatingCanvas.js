@@ -1,11 +1,20 @@
-
 Chart.register(ChartDataLabels);
+
 //set text to display
+
 var plotcanvas = document.getElementById('plotCanvas');
 var plotctx = plotcanvas.getContext('2d');
-var eneryChart = new Chart(plotctx,
+var eneryChart = new Chart(plotcanvas,
   config
 );
+
+var plotcanvasInfo = document.getElementById('plotExtraInfoCanvas');
+var plotInfoctx = plotcanvasInfo.getContext('2d');
+var eneryChartInfo = new Chart(plotcanvasInfo,
+  configInfo
+);
+
+
 
 const mySlider = document.getElementById("customRange3");
 mySlider.addEventListener("click",changevalue);
@@ -19,9 +28,12 @@ function changevalue(){
 }
 
 
-updateData();
+addData();
 
 maintext();
+eneryChartInfo.update();
+
+
 
   function maintext() {
         var textCanvas = document.getElementById("textCanvas");
