@@ -1,17 +1,19 @@
 //def colors
-const productionBackgroundColor = "rgba(63, 199, 39, 0.7)"
-const productionBorderColor = "#2f7118"
+const productionBackgroundColor = "rgba(0, 255, 27, 0.6)"
+const productionBorderColor = "rgba(0, 140, 18, 1)"
 
-const consumptionBackgroundColor = "rgba(255, 10, 13, 0.7)"
-const consumptionBorderColor = "#722e2b"
-
+const consumptionBackgroundColor = "rgba(255, 10, 0, 0.6)"
+const consumptionBorderColor = "rgba(151, 9, 0, 0.87)"
 
 const carbonBackgroundColor = "rgba(110, 8, 156, 0.7)"
 const carbonBorderColor = "#5b2782"
 
-const productionBorderWidth = 1
+const borderWidth = 1
+const selectedBorderWidth = 3
 
-const textColor = "#000"
+
+
+const textColor = "rgba(0, 0, 0, 0.7)"
 
 const borderskipped = false
 var defaultBorderRadius = 5

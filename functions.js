@@ -16,11 +16,24 @@ function graphHoverEvent(e, ctx, mainplot){
   }
 }
 
+function graphHoverEventInfo(e, ctx, mainplot){
+  if (ctx[0] in window){
+  }
+  else{
+    indexOnHover = ctx[0].datasetIndex
+    newBorderRadius = 10
+    borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
+    dataInfo.datasets[indexOnHover].borderRadius = borderradius;
+  }
+}
+
 function graphDragStart(e, datasetIndex) {
   //set new selected item
   selectedIndex = datasetIndex;
   selectedItem = data.datasets[selectedIndex].label;
+  //add the info plot
   addInfoItems();
+  //new Item render
   drawSelectedItem();
   maintext();
   }
@@ -43,14 +56,12 @@ function drawSelectedItem(){
   //reset others look to "normal"
   for (let i = 0; i < data.datasets.length; i++) {
     //change colors
-    data.datasets[i].borderWidth = productionBorderWidth;
-
+    data.datasets[i].borderWidth = borderWidth;
     //change border width
-
     borderradius = {topLeft: defaultBorderRadius, topRight: defaultBorderRadius, bottomLeft: defaultBorderRadius, bottomRight: defaultBorderRadius}
     data.datasets[i].borderRadius = borderradius;
   }
-  data.datasets[selectedIndex].borderWidth = 3;
+  data.datasets[selectedIndex].borderWidth = selectedBorderWidth;
   //change boundary color
   //change radius of selecteditem
   borderradius = {topLeft: newBorderRadius, topRight: newBorderRadius, bottomLeft: newBorderRadius, bottomRight: newBorderRadius};
@@ -86,9 +97,9 @@ function formatBars(value, ctx) {
     displayedValue = ctx.chart.data.labels[ctx.dataIndex] + '\n' + value;
     displayedName = ctx.dataset.label;
     //for to small parts
-    //todo change it depending oin pixel numnber not axis size
+    //todo change it depending on pixel numnber not axis size
     if (displayedValue > 11){
-      temp =  displayedName+":" +displayedValue+" kwh"
+      temp =  displayedName+":" +displayedValue+" kwh/day"
       return temp;
     };
     if (displayedValue <= 11){
@@ -101,7 +112,7 @@ function formatBarsInfo(value, ctx) {
     displayedName = ctx.dataset.label;
     //for to small parts
       //todo change it depending oin pixel numnber not axis size
-    temp =  displayedName+":" +displayedValue+" kwh"
+    temp =  displayedName
     return temp;
 }
 
@@ -138,13 +149,12 @@ function addData(){
 
 function addInfoItems(){
   dataInfo.datasets = [];
+  console.log(dataInfo.datasets)
   //add info
   for (let i = 0; i < dataAll.datasets.length; i++) {
     if ( selectedItem == dataAll.datasets[i].stack){
       dataInfo.datasets.push(dataAll.datasets[i]);
-      console.log(dataInfo);
     }
   }
-  console.log(dataInfo);
   eneryChartInfo.update();
 }

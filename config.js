@@ -93,20 +93,25 @@ const configInfo= {
             type: 'linear',
             position: 'left',
             min:0
-
+          },
+          'right-y-axis': {
+            display: false,
+            type: 'linear',
+            position: 'right',
+            min:0,
           },
         },
     //space at the top + bottom
     layout: {
       padding: {
-          top: 100,
-          bottom: 50,
+          top: 0,
+          bottom: 0,
       }
     },
     //fit it in the container
     maintainAspectRatio: false,
     //make it clickable
-    onHover: graphHoverEvent,
+    onHover: graphHoverEventInfo,
     plugins: {
       legend: {
           //set to false to remove side bar
